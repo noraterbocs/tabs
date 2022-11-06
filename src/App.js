@@ -1,7 +1,8 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { ThreeCircles } from "react-loader-spinner";
+// import { ThreeCircles } from "react-loader-spinner";
 import { BiRightArrow } from "react-icons/bi";
+import Loading from "./Loading";
 
 const url = "https://course-api.com/react-tabs-project";
 
@@ -20,28 +21,13 @@ function App() {
   useEffect(() => {
     fetchJobs();
   }, []);
-
   if (loading) {
     return (
-      <section>
-        <h1>
-          <ThreeCircles
-            height="100"
-            width="100"
-            color="black"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            ariaLabel="three-circles-rotating"
-            outerCircleColor=""
-            innerCircleColor=""
-            middleCircleColor=""
-          />
-        </h1>
-      </section>
+      <main className="loading">
+        <Loading />
+      </main>
     );
   }
-
   const { title, dates, duties, company } = jobs[value];
 
   return (
@@ -55,7 +41,9 @@ function App() {
           {jobs.map((job, index) => {
             return (
               <button
-                className={`btn ${index === value && "btn-active"}`}
+                className={`btn-company ${
+                  index === value && "btn-company-active"
+                }`}
                 key={job.id}
                 onClick={() => setValue(index)}
               >
@@ -84,6 +72,7 @@ function App() {
           </div>
         </article>
       </div>
+      <button className="btn">More info</button>
     </section>
   );
 }

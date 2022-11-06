@@ -14,21 +14,27 @@
   margin: 2px auto 0 auto;
 }
 
+.loading{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .section-jobs{
-display:flex;
-flex-direction: row;
-justify-content: center;
-align-items: flex-start;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .buttons{
-display: flex;
-flex-direction: column;
-margin: 50px 20px 50px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 20px 50px 0;
 }
 
-.btn{
-  border-style:unset;
+.btn-company{
   text-transform: capitalize;
   margin: 0 30px 30px 0;
   border-color: transparent;
@@ -36,49 +42,57 @@ margin: 50px 20px 50px 0;
   padding: 0 0 2px 0;
   font-weight: bold;
   color: #373C47;
+  cursor:pointer;
 }
 
-.btn-active{
-color:#63C7B2;
+.btn-company:hover{
+  color: #63C7B2;
+  border-left-width: 3px;
+  border-left-color: #63C7B2;
+}
+
+.btn-company-active{
+  color:#63C7B2;
 }
 
 .summary{
-display: flex;
-flex-direction: column;
-margin: 50px 0 50px 0;
-gap: 10px;
-color: #373C47;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 50px 0;
+  gap: 10px;
+  color: #373C47;
+  justify-content: flex-start;
 }
 
 .text{
-margin: 5px 5px 5px 5px;
-color: #373C47;
-text-align:start;
+  margin: 5px 5px 5px 5px;
+  color: #373C47;
+  text-align:start;
 }
 
 .jobtitle{
-
+  text-transform:uppercase;
 }
 .company{
-background-color: #c2c8c8;
-padding:2px 2px 2px 2px;
-margin: 0;
-align-self: center;
-border-radius: 10%;
-opacity: 0.8;
+  background-color: #c2c8c8;
+  padding:2px 2px 2px 2px;
+  margin: 0;
+  align-self: center;
+  border-radius: 10%;
+  opacity: 0.8;
 }
 .dates{
-font-weight: bold;
-color:#969a9a;
-font-size: smaller;
+  font-weight: bold;
+  color:#969a9a;
+  font-size: smaller;
 }
 .duty-wrap{
-display: flex;
-flex-direction: row;
-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 .duty{
-margin: 0 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
 .svg {
@@ -93,7 +107,7 @@ margin: 0 0 10px 0;
     width: 600px;
     margin: 40px 20px 20px 20px;
   }
-  .btn{
+  .btn-company{
       font-size: larger;
   }
   .summary{
@@ -105,4 +119,21 @@ margin: 0 0 10px 0;
   .title{
     font-size:xx-large;
   }
+}
+.btn{
+  color:#373C47;
+  border-color: transparent;
+  background-color:#63C7B2;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  letter-spacing: var(--spacing);
+  border-radius: var(--radius);
+  outline: 1px solid #E2E9F9;
+  cursor: pointer;
+  box-shadow: var(--light-shadow);
+  margin: 10px 0 0 0;
+}
+
+.btn:hover{
+  transform: scale(1.5);
 }

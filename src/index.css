@@ -20,12 +20,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #CCDBDC;
-      display: block;
-        align-items: center;
-        text-align: center;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  display: block;
+  align-items: center;
 }
