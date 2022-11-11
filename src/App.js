@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-// import { ThreeCircles } from "react-loader-spinner";
 import { BiRightArrow } from "react-icons/bi";
 import Loading from "./Loading";
 
@@ -15,7 +14,7 @@ function App() {
     const reponse = await fetch(url);
     const newJobs = await reponse.json();
     setJobs(newJobs);
-    setLoading(false);
+    setTimeout(() => setLoading(false), 500);
   };
 
   useEffect(() => {
@@ -28,6 +27,7 @@ function App() {
       </main>
     );
   }
+
   const { title, dates, duties, company } = jobs[value];
 
   return (
@@ -61,11 +61,9 @@ function App() {
           <div className="text">
             {duties.map((duty, index) => {
               return (
-                <div className="duty-wrap">
+                <div className="duty-wrap" key={index}>
                   <BiRightArrow className="svg" />
-                  <p className="duty" key={index}>
-                    {duty}
-                  </p>
+                  <p className="duty">{duty}</p>
                 </div>
               );
             })}
